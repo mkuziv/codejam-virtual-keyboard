@@ -31,7 +31,7 @@ let enKey = {
   shift: [
     '~ ! @ # $ % ^ & * ( ) _ + BS',
     'tab Q W E R T Y U I O P { } |',
-    'CS A S D F G H J K L : " enter',
+    'CS A S D F G H J K L : " ent',
     'shift Z X C V B N M < > ? shift',
     'space'
   ]
@@ -45,32 +45,33 @@ function drawKeyboard(buttonCharacter) {
   keyboard.appendChild(btnElement);
 
 
-  btnElement.addEventListener('mousedown', event => {
+  btnElement.addEventListener('mousedown', () => {
     btnElement.style = 'border-radius: 15px; background: green';    
   });
 
 
-  btnElement.addEventListener('mouseup', event => {
+  btnElement.addEventListener('mouseup', () => {
     btnElement.style = 'border-radius: 0; background: darkcyan';
     document.querySelector('.text').focus();      
   }); 
   
   
-  btnElement.addEventListener('click', event => {
+  btnElement.addEventListener('click', () => {
     if (buttonCharacter === 'space') {
       buttonCharacter = ' ';      
-    } else if (buttonCharacter === 'BS') {
-      buttonCharacter = '';
-      let delLetter = inputField.value;
-      return delLetter = delLetter.slice(0, delLetter.length-1);      
     } else if ( buttonCharacter === 'tab') {
       buttonCharacter = '  ';      
     } else if (buttonCharacter === 'CS') {
-      buttonCharacter = '';
-      this.smallLetter = false;
-    }
+      buttonCharacter = '';      
+    } 
 
-    inputField.value += buttonCharacter;    
+    inputField.value += buttonCharacter;
+    
+    if (buttonCharacter === 'BS') {
+      buttonCharacter = '';      
+      inputField.value = inputField.value.slice(0, inputField.value.length-3);  
+      buttonCharacter = 'BS';   
+    }    
   });
 }
 

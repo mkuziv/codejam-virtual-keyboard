@@ -17,17 +17,17 @@
   align-items: center;
 }
 .keyboard {
-  width: 53%;
+  width: 687px;
   background: cyan;
   margin-top: 100px;
   margin-bottom: 30px;  
 }
 .key-btn {
   margin: 5px;
-  width: 30px;
+  width: 39px;
   height: 30px;
   background: darkcyan;
-  font-size: 15px;
+  font-size: 14px;
   color: rgb(19, 243, 86);
   border: none;
 }
