@@ -16,7 +16,7 @@ inputField.className = 'text';
 content.appendChild(inputField);
 
 const keyboard = document.createElement('div');
-keyboard.className = "keyboard";
+keyboard.className = 'keyboard';
 
 content.appendChild(keyboard);
 
@@ -78,7 +78,7 @@ function drawKeyboard(buttonCharacter) {
 }
 
 enKey.default.forEach(function(item) { 
-  let itemRow = item.split(" ");
+  let itemRow = item.split(' ');
 
   itemRow.forEach((buttonCharacter) => {
     drawKeyboard(buttonCharacter);    
