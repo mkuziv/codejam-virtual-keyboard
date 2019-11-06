@@ -24,14 +24,14 @@ let enKey = {
   default: [
     '` 1 2 3 4 5 6 7 8 9 0 - = BS',
     'tab q w e r t y u i o p [ ] \\',
-    "CL a s d f g h j k l ; ' ent",
+    "CL a s d f g h j k l ; ' enter",
     'shift z x c v b n m , . / shift',
     'space'
   ],
   shift: [
     '~ ! @ # $ % ^ & * ( ) _ + BS',
     'tab Q W E R T Y U I O P { } |',
-    'CS A S D F G H J K L : " ent',
+    'CS A S D F G H J K L : " enter',
     'shift Z X C V B N M < > ? shift',
     'space'
   ]
@@ -63,7 +63,9 @@ function drawKeyboard(buttonCharacter) {
       buttonCharacter = '  ';      
     } else if (buttonCharacter === 'CS') {
       buttonCharacter = '';      
-    } 
+    } else if (buttonCharacter === 'enter') {
+      buttonCharacter = '\n';      
+    }
 
     inputField.value += buttonCharacter;
     
